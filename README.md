@@ -1,5 +1,7 @@
 # vue-js-frame
 
+一个移动端 Vue 框架，使用 Vant 以及 Nutui，封装好了请求拦截器，可以根据 appconfig.js 中的配置对应运行打包不用的应用。
+
 ## Project setup
 
 ```

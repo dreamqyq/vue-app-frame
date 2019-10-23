@@ -3,25 +3,34 @@
     {{ msg }}
     <button @click="onClick">click me</button>
     <hr />
-
+    <button @click="test">formatQuery</button>====> {{ result }}
+    <hr />
     <button @click="request">Request</button>
   </div>
 </template>
 
 <script>
 import * as api from "@/api/insurance";
+import * as utils from "@/utils/commonUtils";
 import { userLogin } from "@/utils/login";
 
 export default {
   name: "index",
   data() {
     return {
-      msg: "index"
+      msg: "index",
+      result: null
     };
   },
   methods: {
     onClick() {
       this.$router.push("/subPage");
+    },
+    test() {
+      this.result = utils.formatQueryParams({
+        a: 111,
+        b: 222
+      });
     },
     request() {
       userLogin(async res => {
