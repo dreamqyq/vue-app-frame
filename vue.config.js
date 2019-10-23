@@ -28,17 +28,5 @@ module.exports = {
     // config.plugins.delete('preload') // TODO: need test
     config.plugins.delete("prefetch"); // 消耗性能
     config.entryPoints.delete("app");
-    config.module
-      .rule("files")
-      .test(/\.(xlsx|xls|exe)(\?.*)?$/)
-      .use("file-loader")
-      .loader("file-loader")
-      .tap(() => {
-        return {
-          name: "static/files/[name].[hash:8].[ext]"
-        };
-        // return options
-      })
-      .end();
   }
 };
